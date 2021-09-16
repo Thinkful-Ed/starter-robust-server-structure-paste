@@ -40,7 +40,11 @@ app.post(
     const { data: { text } = {} } = req.body;
     const newPaste = {
       id: ++lastPasteId, // Increment last id then assign as the current ID
-      result: result,
+      name: name,
+      syntax: syntax,
+      exposure: exposure,
+      expiration: expiration,
+      text: text,
     };
     pastes.push(newPaste);
     res.status(201).json({ data: newPaste });
