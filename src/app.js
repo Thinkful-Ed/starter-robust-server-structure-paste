@@ -37,14 +37,15 @@ app.post(
   bodyHasTextProperty, // Add validation middleware function
   (req, res) => {
     // Route handler no longer has validation code.
-    const { data: { text } = {} } = req.body;
+    const { data: { name, syntax, exposure, expiration, text, user_id } = {} } = req.body;
     const newPaste = {
       id: ++lastPasteId, // Increment last id then assign as the current ID
-      name: name,
-      syntax: syntax,
-      exposure: exposure,
-      expiration: expiration,
-      text: text,
+      name,
+      syntax,
+      exposure,
+      expiration,
+      text,
+      user_id,
     };
     pastes.push(newPaste);
     res.status(201).json({ data: newPaste });
