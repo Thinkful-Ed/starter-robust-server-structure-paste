@@ -24,20 +24,21 @@ app.get("/pastes", (req, res) => {
 let lastPasteId = pastes.reduce((maxId, paste) => Math.max(maxId, paste.id), 0);
 
 app.post("/pastes", (req, res, next) => {
-  const { data: { name, syntax, exposure, expiration, text } = {} } = req.body;
+  const { data: { name, syntax, exposure, expiration, text, user_id } = {} } = req.body;
   if(text){
-      const newPaste = {
-        id: ++lastPasteId, // Increment last ID, then assign as the current ID
-        name: name,
-        syntax: syntax,
-        exposure: exposure,
-        expiration: expiration,
-        text: text,
-      };
-      pastes.push(newPaste);
-      res.status(201).json({ data: newPaste });
+    const newPaste = {
+      id: ++lastPasteId, // Increment last ID, then assign as the current ID
+      name,
+      syntax,
+      exposure,
+      expiration,
+      text,
+      user_id,
+    };
+    pastes.push(newPaste);
+    res.status(201).json({ data: newPaste });
   } else {
-      res.sendStatus(400);
+    res.sendStatus(400);
   }
 });
 
