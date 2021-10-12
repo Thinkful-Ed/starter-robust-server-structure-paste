@@ -1,7 +1,8 @@
 const pastes = require("../data/pastes-data");
 
 function list(req, res) {
-  res.json({ data: pastes });
+  const { userId } = req.params;
+  res.json({ data: pastes.filter(userId ? paste => paste.user_id == userId : () => true) });
 }
 
 let lastPasteId = pastes.reduce((maxId, paste) => Math.max(maxId, paste.id), 0)
