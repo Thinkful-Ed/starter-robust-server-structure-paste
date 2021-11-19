@@ -7,7 +7,7 @@ describe("path /pastes", () => {
     pastes.splice(0, pastes.length);
   });
   describe("GET method", () => {
-    test("returns an array of pastes", async () => {
+    it("returns an array of pastes", async () => {
       const expected = [
         {
           id: 1,
@@ -47,10 +47,7 @@ describe("path /pastes", () => {
     });
   });
   describe("POST method", () => {
-    beforeEach(() => {
-      pastes.splice(0, pastes.length);
-    });
-    test("creates a new paste and assigns id", async () => {
+    it("creates a new paste and assigns id", async () => {
       const newPaste = {
         name: "String Reverse in JavaScript",
         syntax: "Javascript",
@@ -70,7 +67,7 @@ describe("path /pastes", () => {
       });
     });
 
-    test("returns 400 if result is missing", async () => {
+    it("returns 400 if result is missing", async () => {
       const response = await request(app)
         .post("/pastes")
         .set("Accept", "application/json")
@@ -79,7 +76,7 @@ describe("path /pastes", () => {
       expect(response.status).toBe(400);
     });
 
-    test("returns 400 if result is empty", async () => {
+    it("returns 400 if result is empty", async () => {
       const response = await request(app)
         .post("/pastes")
         .set("Accept", "application/json")
