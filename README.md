@@ -1,20 +1,46 @@
 # Starter Code: Robust Server Structure
 
-This server is intended to be run for some checkpoints in the Thinkful curriculum. If you have trouble getting the server to run, reach out for assistance.
+This project provides a robust foundation for building scalable Express.js applications. It serves as a starter codebase for Thinkful students or developers to learn and implement clean, organized server structures with a focus on scalability and ease of maintenance.
+
+## Prerequisites
+
+- Node.js (v14 or higher recommended)
+- npm (v6 or higher)
 
 ## Installation
 
-1. Clone this repository.
-1. `cd` into the newly created directory.
-1. Run `npm install`.
-1. Run `npm run dev`. This command will spin up a server on port 5000 that will automatically restart when changes are made to source files.
+1. Clone the repository using the following command:
+    ```bash
+    git clone https://github.com/Thinkful-Ed/starter-robust-server-structure-paste.git
+    ```
 
-When you navigate to `localhost:5000` initially, you should see a `Not found: /` message in the browser because none of the routes have been implemented yet.
+2. Navigate into the project directory:
+    ```bash
+    cd starter-robust-server-structure-paste
+    ```
 
-## Description
+3. Install the required dependencies:
+    ```bash
+    npm install
+    ```
 
-This project contains the minimum setup code required to run an Express API. However, only the not found and error handlers are implemented at this point.
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-Follow the instructions in the checkpoint for implementing the API.
+5. Open your browser and navigate to `http://localhost:5000`. You should see a "Not found: /" message, indicating the server is running.
 
-If you have trouble, reach out for assistance.
+## API Documentation
+
+This project will include various API endpoints, which you can define in the `src/routes` directory. For now, the server returns "Not found" for all routes. As you build the application, make sure to document each route using tools like Postman or Swagger.
+
+## Project Structure
+
+├── src
+│   ├── routes      # Define your API routes here
+│   ├── middleware  # Custom middleware functions
+│   ├── controllers # Business logic goes here
+├── .gitignore      # Ignore unnecessary files in Git
+├── package.json    # Project metadata and dependencies
+├── README.md       # Project documentation
