@@ -36,7 +36,7 @@ This project provides a robust foundation for building scalable Express.js appli
 This project will include various API endpoints, which you can define in the `src/routes` directory. For now, the server returns "Not found" for all routes. As you build the application, make sure to document each route using tools like Postman or Swagger.
 
 ## Project Structure
-
+```
 ├── src
 │   ├── routes      # Define your API routes here
 │   ├── middleware  # Custom middleware functions
@@ -44,3 +44,4 @@ This project will include various API endpoints, which you can define in the `sr
 ├── .gitignore      # Ignore unnecessary files in Git
 ├── package.json    # Project metadata and dependencies
 ├── README.md       # Project documentation
+```
